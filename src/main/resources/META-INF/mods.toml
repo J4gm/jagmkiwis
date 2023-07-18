@@ -1,0 +1,25 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="CC BY-NC-SA 3.0"
+
+[[mods]]
+	modId="jagmkiwis"
+	version="1.20.1-1.0"
+	displayName="Jagm's Kiwis"
+	authors="Jagm"
+	description='''
+	Adds kiwi birds!
+	'''
+[[dependencies.jagmkiwis]]
+    modId="forge"
+    mandatory=true
+    versionRange="[47,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.jagmkiwis]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.20.1,)"
+    ordering="NONE"
+    side="BOTH"

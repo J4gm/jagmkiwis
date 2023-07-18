@@ -1,0 +1,26 @@
+{
+  "type": "crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "tag": "forge:fruits/kiwi"
+    },
+    {
+      "item": "minecraft:sweet_berries"
+    },
+    [
+      {
+        "item": "minecraft:egg"
+      },
+      {
+        "item": "jagmkiwis:kiwi_egg"
+      }
+    ]
+  ],
+  "result": {
+    "item": "jagmkiwis:pavlova",
+    "count": 1
+  }
+}

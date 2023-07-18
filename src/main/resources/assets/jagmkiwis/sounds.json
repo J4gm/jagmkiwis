@@ -1,0 +1,22 @@
+{
+  "kiwi_ambient" : {
+    "subtitle" : "jagmkiwis.subtitle.kiwi_ambient",
+    "sounds" : [ "jagmkiwis:kiwi_ambient1", "jagmkiwis:kiwi_ambient2", "jagmkiwis:kiwi_ambient3" ]
+  },
+  "kiwi_hurt" : {
+    "subtitle" : "jagmkiwis.subtitle.kiwi_hurt",
+    "sounds" : [ "jagmkiwis:kiwi_hurt1", "jagmkiwis:kiwi_hurt2" ]
+  },
+  "kiwi_death" : {
+    "subtitle" : "jagmkiwis.subtitle.kiwi_death",
+    "sounds" : [ "jagmkiwis:kiwi_death" ]
+  },
+  "kiwi_dig" : {
+    "subtitle" : "jagmkiwis.subtitle.kiwi_dig",
+    "sounds" : [ "minecraft:item/brush/brushing_gravel1", "minecraft:item/brush/brushing_gravel2", "minecraft:item/brush/brushing_gravel3", "minecraft:item/brush/brushing_gravel4" ]
+  },
+  "kiwi_lay_egg" : {
+    "subtitle" : "jagmkiwis.subtitle.kiwi_lay_egg",
+    "sounds" : [ "minecraft:mob/chicken/plop" ]
+  }
+}
