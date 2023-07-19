@@ -75,7 +75,6 @@ public class KiwiEntity extends Animal implements VariantHolder<KiwiEntity.Varia
 	protected void registerGoals() {
 		this.digGoal = new KiwiDigGoal(this);
 		this.goalSelector.addGoal(0, new FloatGoal(this));
-		this.goalSelector.addGoal(1, new PanicGoal(this, 1.0D));
 		this.goalSelector.addGoal(2, new BreedGoal(this, 1.0D));
 		this.goalSelector.addGoal(3, new TemptGoal(this, 1.0D, FOOD_ITEMS, false));
 		this.goalSelector.addGoal(4, new FollowParentGoal(this, 1.1D));
@@ -212,6 +211,9 @@ public class KiwiEntity extends Animal implements VariantHolder<KiwiEntity.Varia
 			this.goalSelector.addGoal(3, new RangedAttackGoal(this, 1.0D, 20, 40, 20.0F));
 			this.targetSelector.addGoal(1, new HurtByTargetGoal(this));
 			this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Monster.class, true));
+		}
+		else {
+			this.goalSelector.addGoal(1, new PanicGoal(this, 1.0D));
 		}
 		this.entityData.set(DATA_TYPE_ID, variant.id);
 	}
