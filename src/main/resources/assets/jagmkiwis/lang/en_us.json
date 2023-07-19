@@ -1,5 +1,6 @@
 {
 	"entity.jagmkiwis.kiwi": "Kiwi Bird",
+	"entity.jagmkiwis.laser_beam": "Laser Beam",
 	"item.jagmkiwis.kiwi_spawn_egg": "Kiwi Bird Spawn Egg",
 	"item.jagmkiwis.kiwi_fruit": "Kiwifruit",
 	"item.jagmkiwis.kiwi_egg": "Kiwi Egg",
@@ -8,5 +9,6 @@
 	"jagmkiwis.subtitle.kiwi_hurt": "Kiwi hurt",
 	"jagmkiwis.subtitle.kiwi_death": "Kiwi dies",
 	"jagmkiwis.subtitle.kiwi_lay_egg": "Kiwi plops",
-	"jagmkiwis.subtitle.kiwi_dig": "Kiwi forages"
+	"jagmkiwis.subtitle.kiwi_dig": "Kiwi forages",
+	"jagmkiwis.subtitle.laser_shoot": "Pew!"
 }

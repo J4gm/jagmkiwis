@@ -52,6 +52,8 @@ public class JagmKiwis {
 	public static final RegistryObject<EntityType<KiwiEntity>> KIWI = ENTITIES.register("kiwi",
 			() -> EntityType.Builder.of((EntityType.EntityFactory<KiwiEntity>) KiwiEntity::new, MobCategory.CREATURE).clientTrackingRange(8).setShouldReceiveVelocityUpdates(false)
 					.sized(0.5F, 0.5F).build("kiwi"));
+	public static final RegistryObject<EntityType<LaserBeamEntity>> LASER_BEAM = ENTITIES.register("laser_beam", () -> EntityType.Builder
+			.of((EntityType.EntityFactory<LaserBeamEntity>) LaserBeamEntity::new, MobCategory.MISC).setShouldReceiveVelocityUpdates(true).sized(0.5F, 0.5F).build("laser_beam"));
 
 	public static final RegistryObject<Item> KIWI_SPAWN_EGG = ITEMS.register("kiwi_spawn_egg", () -> new ForgeSpawnEggItem(KIWI, 0x97784A, 0xBEE000, new Item.Properties()));
 	public static final RegistryObject<Item> KIWI_FRUIT = ITEMS.register("kiwi_fruit", () -> new Item((new Item.Properties()).food(Foods.APPLE)));
@@ -68,6 +70,8 @@ public class JagmKiwis {
 	public static final RegistryObject<SoundEvent> KIWI_DIG = SOUNDS.register("kiwi_dig", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(MODID, "kiwi_dig")));
 	public static final RegistryObject<SoundEvent> KIWI_LAY_EGG = SOUNDS.register("kiwi_lay_egg",
 			() -> SoundEvent.createVariableRangeEvent(new ResourceLocation(MODID, "kiwi_lay_egg")));
+	public static final RegistryObject<SoundEvent> LASER_SHOOT_SOUND = SOUNDS.register("laser_shoot",
+			() -> SoundEvent.createVariableRangeEvent(new ResourceLocation(MODID, "laser_shoot")));
 
 	public JagmKiwis() {
 		IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -124,6 +128,7 @@ public class JagmKiwis {
 		@SubscribeEvent
 		public static void onClientSetup(FMLClientSetupEvent event) {
 			EntityRenderers.register(KIWI.get(), KiwiRenderer::new);
+			EntityRenderers.register(LASER_BEAM.get(), LaserBeamRenderer::new);
 		}
 
 		@SubscribeEvent

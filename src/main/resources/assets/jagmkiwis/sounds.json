@@ -18,5 +18,9 @@
   "kiwi_lay_egg" : {
     "subtitle" : "jagmkiwis.subtitle.kiwi_lay_egg",
     "sounds" : [ "minecraft:mob/chicken/plop" ]
+  },
+  "laser_shoot": {
+  	"subtitle" : "jagmkiwis.subtitle.laser_shoot",
+  	"sounds" : [ "jagmkiwis:laser_shoot" ]
   }
 }

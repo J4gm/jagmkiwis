@@ -4,12 +4,13 @@
 		"minecraft:forest",
 		"minecraft:flower_forest",
 		"minecraft:birch_forest",
-		"minecraft:old_growth_birch_forest"
+		"minecraft:old_growth_birch_forest",
+		"minecraft:cherry_grove"
 	],
 	"spawners": {
 		"type": "jagmkiwis:kiwi",
 		"weight": 20,
-		"minCount": 2,
+		"minCount": 3,
 		"maxCount": 4
 	}
 }
