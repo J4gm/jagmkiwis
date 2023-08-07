@@ -29,7 +29,7 @@ public class KiwiDigGoal extends Goal {
 		if (this.mob.isBaby() || this.mob.getRandom().nextInt(3000) != 0) {
 			return false;
 		} else {
-			return this.mob.level().getBlockState(this.mob.blockPosition().below()).is(BlockTags.SNIFFER_DIGGABLE_BLOCK);
+			return this.mob.level().getBlockState(this.mob.blockPosition().below()).is(BlockTags.DIRT);
 		}
 	}
 
