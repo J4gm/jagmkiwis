@@ -53,7 +53,7 @@ import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.network.NetworkHooks;
+import net.minecraftforge.common.ForgeHooks;
 
 public class KiwiEntity extends Animal implements VariantHolder<KiwiEntity.Variant>, RangedAttackMob {
 
@@ -150,11 +150,6 @@ public class KiwiEntity extends Animal implements VariantHolder<KiwiEntity.Varia
 		boolean isLaserVariant = this.getRandom().nextInt(100) < CHANCE_OF_LASERS;
 		babyKiwi.setVariant(isLaserVariant ? Variant.LASER : Variant.NORMAL);
 		return babyKiwi;
-	}
-
-	@Override
-	public Packet<ClientGamePacketListener> getAddEntityPacket() {
-		return NetworkHooks.getEntitySpawningPacket(this);
 	}
 
 	public static AttributeSupplier.Builder prepareAttributes() {
