@@ -1,0 +1,14 @@
+{
+	"entity.jagmkiwis.kiwi": "Kiwi",
+	"entity.jagmkiwis.laser_beam": "Rayon laser",
+	"item.jagmkiwis.kiwi_spawn_egg": "Oeuf d'apparition de kiwi",
+	"item.jagmkiwis.kiwi_fruit": "Kiwi",
+	"item.jagmkiwis.kiwi_egg": "Oeuf de kiwi",
+	"item.jagmkiwis.pavlova": "Pavlova",
+	"jagmkiwis.subtitle.kiwi_ambient": "Cri de kiwi",
+	"jagmkiwis.subtitle.kiwi_hurt": "Kiwi blessé",
+	"jagmkiwis.subtitle.kiwi_death": "Kiwi qui meurt",
+	"jagmkiwis.subtitle.kiwi_lay_egg": "Kiwi pond un oeuf",
+	"jagmkiwis.subtitle.kiwi_dig": "Kiwi creusant",
+	"jagmkiwis.subtitle.laser_shoot": "Pew!"
+}
