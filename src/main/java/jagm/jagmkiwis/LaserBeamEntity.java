@@ -15,14 +15,12 @@ import net.minecraft.world.phys.EntityHitResult;
 
 public class LaserBeamEntity extends AbstractArrow {
 
-	private double baseDamage = 4.0D;
-
 	protected LaserBeamEntity(EntityType<? extends AbstractArrow> entityType, Level level) {
-		super(entityType, level);
+		super(entityType, level, ItemStack.EMPTY);
 	}
 
 	protected LaserBeamEntity(Level level, LivingEntity shooter) {
-		super(JagmKiwis.LASER_BEAM.get(), shooter, level);
+		super(JagmKiwis.LASER_BEAM.get(), shooter, level, ItemStack.EMPTY);
 	}
 
 	@Override
@@ -46,7 +44,8 @@ public class LaserBeamEntity extends AbstractArrow {
 	protected void onHitEntity(EntityHitResult hitResult) {
 		Entity target = hitResult.getEntity();
 		float f = (float) this.getDeltaMovement().length();
-		int i = Mth.ceil(Mth.clamp((double) f * this.baseDamage, 0.0D, (double) Integer.MAX_VALUE));
+		double baseDamage = 4.0D;
+		int i = Mth.ceil(Mth.clamp((double) f * baseDamage, 0.0D, (double) Integer.MAX_VALUE));
 		if (this.isCritArrow()) {
 			long j = (long) this.random.nextInt(i / 2 + 2);
 			i = (int) Math.min(j + (long) i, 2147483647L);
