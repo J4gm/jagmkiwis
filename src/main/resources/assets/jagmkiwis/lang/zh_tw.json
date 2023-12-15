@@ -1,0 +1,14 @@
+{
+	"entity.jagmkiwis.kiwi": "奇異鳥",
+	"entity.jagmkiwis.laser_beam": "雷射",
+	"item.jagmkiwis.kiwi_spawn_egg": "奇異鳥 生怪蛋",
+	"item.jagmkiwis.kiwi_fruit": "奇異果",
+	"item.jagmkiwis.kiwi_egg": "奇異蛋",
+	"item.jagmkiwis.pavlova": "百露華蛋糕",
+	"jagmkiwis.subtitle.kiwi_ambient": "奇異鳥啾啾",
+	"jagmkiwis.subtitle.kiwi_hurt": "奇異鳥受傷",
+	"jagmkiwis.subtitle.kiwi_death": "奇異鳥死亡",
+	"jagmkiwis.subtitle.kiwi_lay_egg": "奇異鳥下蛋",
+	"jagmkiwis.subtitle.kiwi_dig": "奇異鳥挖掘",
+	"jagmkiwis.subtitle.laser_shoot": "奇異鳥射擊"
+}
