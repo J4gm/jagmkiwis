@@ -24,7 +24,7 @@ public class LaserBeamEntity extends AbstractArrow {
 	}
 
 	@Override
-	protected ItemStack getPickupItem() {
+	protected ItemStack getDefaultPickupItem() {
 		return null;
 	}
 
@@ -45,9 +45,9 @@ public class LaserBeamEntity extends AbstractArrow {
 		Entity target = hitResult.getEntity();
 		float f = (float) this.getDeltaMovement().length();
 		double baseDamage = 4.0D;
-		int i = Mth.ceil(Mth.clamp((double) f * baseDamage, 0.0D, (double) Integer.MAX_VALUE));
+		int i = Mth.ceil(Mth.clamp((double) f * baseDamage, 0.0D, Integer.MAX_VALUE));
 		if (this.isCritArrow()) {
-			long j = (long) this.random.nextInt(i / 2 + 2);
+			long j = this.random.nextInt(i / 2 + 2);
 			i = (int) Math.min(j + (long) i, 2147483647L);
 		}
 		Entity shooter = this.getOwner();
@@ -65,8 +65,7 @@ public class LaserBeamEntity extends AbstractArrow {
 			if (flag) {
 				return;
 			}
-			if (target instanceof LivingEntity) {
-				LivingEntity livingentity = (LivingEntity) target;
+			if (target instanceof LivingEntity livingentity) {
 				Level level = this.level();
 				if (!level.isClientSide && shooter instanceof LivingEntity) {
 					EnchantmentHelper.doPostHurtEffects(livingentity, shooter);

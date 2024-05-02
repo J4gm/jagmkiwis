@@ -1,7 +1,6 @@
 package jagm.jagmkiwis;
 
-import java.util.function.Predicate;
-
+import net.minecraft.world.entity.*;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -9,10 +8,6 @@ import com.mojang.logging.LogUtils;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.MobCategory;
-import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.Cat;
@@ -50,7 +45,7 @@ public class JagmKiwis {
 	public static final DeferredRegister<SoundEvent> SOUNDS = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, MODID);
 
 	public static final RegistryObject<EntityType<KiwiEntity>> KIWI = ENTITIES.register("kiwi",
-			() -> EntityType.Builder.of((EntityType.EntityFactory<KiwiEntity>) KiwiEntity::new, MobCategory.CREATURE).clientTrackingRange(8).setShouldReceiveVelocityUpdates(false)
+			() -> EntityType.Builder.of(KiwiEntity::new, MobCategory.CREATURE).clientTrackingRange(8).setShouldReceiveVelocityUpdates(false)
 					.sized(0.5F, 0.5F).build("kiwi"));
 	public static final RegistryObject<EntityType<LaserBeamEntity>> LASER_BEAM = ENTITIES.register("laser_beam", () -> EntityType.Builder
 			.of((EntityType.EntityFactory<LaserBeamEntity>) LaserBeamEntity::new, MobCategory.MISC).setShouldReceiveVelocityUpdates(true).sized(0.5F, 0.5F).build("laser_beam"));
@@ -59,7 +54,7 @@ public class JagmKiwis {
 	public static final RegistryObject<Item> KIWI_FRUIT = ITEMS.register("kiwi_fruit", () -> new Item((new Item.Properties()).food(Foods.APPLE)));
 	public static final RegistryObject<Item> KIWI_EGG = ITEMS.register("kiwi_egg", () -> new KiwiEggItem((new Item.Properties()).stacksTo(16)));
 	public static final RegistryObject<Item> PAVLOVA = ITEMS.register("pavlova",
-			() -> new Item((new Item.Properties()).food((new FoodProperties.Builder()).nutrition(10).saturationMod(0.6F).build())));
+			() -> new Item((new Item.Properties()).food((new FoodProperties.Builder()).nutrition(10).saturationModifier(0.6F).build())));
 
 	public static final RegistryObject<SoundEvent> KIWI_AMBIENT_SOUND = SOUNDS.register("kiwi_ambient",
 			() -> SoundEvent.createVariableRangeEvent(new ResourceLocation(MODID, "kiwi_ambient")));
@@ -94,7 +89,7 @@ public class JagmKiwis {
 
 		@SubscribeEvent
 		public static void onRegisterSpawnPlacements(SpawnPlacementRegisterEvent event) {
-			event.register(KIWI.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules,
+			event.register(KIWI.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules,
 					SpawnPlacementRegisterEvent.Operation.REPLACE);
 		}
 
@@ -140,10 +135,10 @@ public class JagmKiwis {
 
 	@SubscribeEvent
 	public static void onJoinLevel(EntityJoinLevelEvent event) {
-		if (event.getEntity() instanceof Cat) {
-			Cat cat = (Cat) event.getEntity();
-			if (cat.level() != null && !cat.level().isClientSide) {
-				cat.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(cat, KiwiEntity.class, false, (Predicate<LivingEntity>) null));
+		if (event.getEntity() instanceof Cat cat) {
+            cat.level();
+            if (!cat.level().isClientSide) {
+				cat.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(cat, KiwiEntity.class, false));
 			}
 		}
 	}

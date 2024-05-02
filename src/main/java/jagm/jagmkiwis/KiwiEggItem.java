@@ -11,7 +11,6 @@ import net.minecraft.world.entity.projectile.ThrownEgg;
 import net.minecraft.world.item.EggItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
@@ -26,7 +25,7 @@ public class KiwiEggItem extends EggItem {
 	@Override
 	public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
 		ItemStack itemstack = player.getItemInHand(hand);
-		level.playSound((Player) null, player.getX(), player.getY(), player.getZ(), SoundEvents.EGG_THROW, SoundSource.PLAYERS, 0.5F,
+		level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.EGG_THROW, SoundSource.PLAYERS, 0.5F,
 				0.4F / (level.getRandom().nextFloat() * 0.4F + 0.8F));
 		if (!level.isClientSide) {
 			ThrownEgg thrownegg = new ThrownEgg(level, player) {
@@ -37,7 +36,7 @@ public class KiwiEggItem extends EggItem {
 					HitResult.Type hitresult$type = hitResult.getType();
 					if (hitresult$type == HitResult.Type.ENTITY) {
 						this.onHitEntity((EntityHitResult) hitResult);
-						level.gameEvent(GameEvent.PROJECTILE_LAND, hitResult.getLocation(), GameEvent.Context.of(this, (BlockState) null));
+						level.gameEvent(GameEvent.PROJECTILE_LAND, hitResult.getLocation(), GameEvent.Context.of(this, null));
 					} else if (hitresult$type == HitResult.Type.BLOCK) {
 						BlockHitResult blockhitresult = (BlockHitResult) hitResult;
 						this.onHitBlock(blockhitresult);
