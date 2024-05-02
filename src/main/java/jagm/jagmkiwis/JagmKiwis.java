@@ -136,7 +136,6 @@ public class JagmKiwis {
 	@SubscribeEvent
 	public static void onJoinLevel(EntityJoinLevelEvent event) {
 		if (event.getEntity() instanceof Cat cat) {
-            cat.level();
             if (!cat.level().isClientSide) {
 				cat.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(cat, KiwiEntity.class, false));
 			}

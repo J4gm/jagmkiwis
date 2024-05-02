@@ -7,9 +7,17 @@
     {
       "tag": "forge:fruits/kiwi"
     },
-    {
-      "item": "minecraft:sweet_berries"
-    },
+    [
+      {
+        "item": "minecraft:sweet_berries"
+      },
+      {
+        "tag": "forge:fruits/strawberry"
+      },
+      {
+        "tag": "forge:fruits/raspberry"
+      }
+    ],
     [
       {
         "item": "minecraft:egg"
