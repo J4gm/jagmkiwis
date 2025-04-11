@@ -1,0 +1,14 @@
+{
+	"entity.jagmkiwis.kiwi": "几维鸟",
+	"entity.jagmkiwis.laser_beam": "镭射",
+	"item.jagmkiwis.kiwi_spawn_egg": "几维鸟刷怪蛋",
+	"item.jagmkiwis.kiwi_fruit": "奇异果",
+	"item.jagmkiwis.kiwi_egg": "几维鸟蛋",
+	"item.jagmkiwis.pavlova": "帕夫洛娃蛋糕",
+	"jagmkiwis.subtitle.kiwi_ambient": "奇异鸟：啾啾",
+	"jagmkiwis.subtitle.kiwi_hurt": "奇异鸟：受伤",
+	"jagmkiwis.subtitle.kiwi_death": "奇异鸟：死亡",
+	"jagmkiwis.subtitle.kiwi_lay_egg": "奇异鸟：下蛋",
+	"jagmkiwis.subtitle.kiwi_dig": "奇异鸟：挖掘",
+	"jagmkiwis.subtitle.laser_shoot": "奇异鸟：射击"
+}
